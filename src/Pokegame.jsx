@@ -1,18 +1,17 @@
 import React from 'react';
-import cards from './cards';
 import Pokedex from './Pokedex';
 import './Pokegame.css';
 import { choice, remove } from './helpers';
 
-function Pokegame() {
+function Pokegame({ cards }) {
   let hand1 = [], hand2 = [];
   let hand1exp = 0, hand2exp = 0;
   let pokeCards = cards;
   let turn = true;
 
-  while(pokeCards.length > 0) {
+  while (pokeCards.length > 0) {
     let randomCard = choice(pokeCards);
-    if(turn === true) {
+    if (turn === true) {
       hand1.push(randomCard);
       hand1exp += randomCard.base_experience;
     } else {
